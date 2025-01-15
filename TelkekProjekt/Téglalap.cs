@@ -34,16 +34,7 @@ namespace TelkekProjekt
 
         public override double ÁratSzámol()
         {
-            double ar = 0;
-            if (vanKözmű)
-            {
-                ar = TerületSzamol() * 30000;
-            }
-            else
-            {
-                ar = TerületSzamol() * 10000;
-            }
-            return ar;
+            return TerületSzamol() * NégyzetméterÁrSzámol();
         }
     }
 }

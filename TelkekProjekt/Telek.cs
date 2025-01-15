@@ -26,7 +26,7 @@ namespace TelkekProjekt
         //Nem szerződés (megvalósítás)
         public double NégyzetméterÁrSzámol()
         {
-            return 0;
+            return vanKözmű ? 30000 : 10000;
         }
          
     }
