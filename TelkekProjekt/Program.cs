@@ -10,6 +10,13 @@ namespace TelkekProjekt
     {
         static void Main(string[] args)
         {
+            List<Telek> telkek = new List<Telek>();
+            telkek.Add(new Téglalap("t1",true, 13.95, 12.9));
+
+            foreach (Telek s in telkek) { s.InformációKözlő(); }
+            Console.ReadLine();
+
+
         }
     }
 }
