@@ -11,7 +11,7 @@ namespace TelkekProjekt
         private double a;
         private double b;
 
-        public Téglalap(string helyrajziSzám, bool vanKözmű, double a, double b) : base(helyrajziSzám, vanKözmű)
+        public Téglalap(string helyrajziSzám, bool vanKözmű, bool vanSzomszéd, double a, double b) : base(helyrajziSzám, vanKözmű, vanSzomszéd)
         {
             this.a = a;
             this.b = b;
@@ -19,7 +19,19 @@ namespace TelkekProjekt
 
         public override void InformációKözlő()
         {
-            Console.WriteLine("A név: {0}, közmű: {1} a ={2}, b= {3}, K={4}, T= {5}, a végső ár: {6}", helyrajziSzám, vanKözmű ? "Van" : "Nincs", a, b, KerületSzamol(), TerületSzamol(), ÁratSzámol());
+            Console.WriteLine("A név: {0}, közmű: {1}, a ={2}, b= {3}, K={4}, T= {5}, a végső ár: {6} Ft.", helyrajziSzám, vanKözmű ? "Van" : "Nincs", a, b, KerületSzamol(), TerületSzamol(), ÁratSzámol());
+        }
+
+        public override double KerítésHosszSzámláló()
+        {
+            if (vanSzomszéd)
+            {
+                return a + (2 * b);
+            }
+            else
+            {
+                return KerületSzamol();
+            }
         }
 
         public override double KerületSzamol()

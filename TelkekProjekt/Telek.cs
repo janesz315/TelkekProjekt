@@ -8,13 +8,16 @@ namespace TelkekProjekt
 {
     internal abstract class Telek
     {
+
         public string helyrajziSzám;
         public bool vanKözmű;
+        public bool vanSzomszéd;
 
-        public Telek(string helyrajziSzám, bool vanKözmű)
+        public Telek(string helyrajziSzám, bool vanKözmű, bool vanSzomszéd)
         {
             this.helyrajziSzám = helyrajziSzám;
             this.vanKözmű = vanKözmű;
+            this.vanSzomszéd = vanSzomszéd;
         }
         //Szerződés
         public abstract double TerületSzamol();
@@ -22,6 +25,8 @@ namespace TelkekProjekt
         public abstract double ÁratSzámol();
 
         public abstract void InformációKözlő();
+
+        public abstract double KerítésHosszSzámláló();
 
         //Nem szerződés (megvalósítás)
         public double NégyzetméterÁrSzámol()
